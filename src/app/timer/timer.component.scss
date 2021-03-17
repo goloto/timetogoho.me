@@ -1,0 +1,26 @@
+@keyframes timeChange {
+  0% {
+    color: #3e3e3e;
+  }
+
+  50% {
+    color: black;
+  }
+
+  100% {
+    color: #3e3e3e;
+  }
+}
+
+:host {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.the-best-timer-of-your-life {
+  font-size: 50vh;
+  animation: timeChange 1s linear infinite;
+  transition: 1s linear;
+}
