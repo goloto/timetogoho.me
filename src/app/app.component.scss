@@ -1,7 +1,13 @@
+@font-face {
+  font-family: 'viga';
+  src: url('/assets/fonts/Viga-Regular.ttf') format('truetype');
+}
+
 :host {
+  font-family: 'viga';
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100vw;
   height: 100vh;
 }
