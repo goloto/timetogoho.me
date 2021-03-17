@@ -23,16 +23,16 @@ export class TimerTime {
     const minutesInHour = 60;
 
     this.minutes = minutesInHour - currentTime.getMinutes();
-    this.seconds = secondsInMinute - currentTime.getSeconds();
+    this.seconds = (secondsInMinute - 1) - currentTime.getSeconds();
 
-    if (+this.seconds > 0) {
+    if (this.seconds >= 0) {
       this.minutes -= 1;
     }
 
     if (isCurrentDay) {
-      this.hours = 17 - currentTime.getHours();
+      this.hours = (hourWhenWorkdayEnd - 1) - currentTime.getHours();
     } else {
-      this.hours = hoursInDay - 1 - currentTime.getHours() + hourWhenWorkdayEnd;
+      this.hours = (hoursInDay - 1) - currentTime.getHours() + hourWhenWorkdayEnd;
     }
   }
 
