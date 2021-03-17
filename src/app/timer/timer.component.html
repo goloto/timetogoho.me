@@ -1,3 +1,14 @@
 <div class="the-best-timer-of-your-life">
-  {{time.hours}}:{{time.minutes}}:{{time.seconds}}
+  <div class="time-group">
+    <div class="time">{{time.formattedHours}}</div>
+    <div class="description">hours</div>
+  </div>
+  <div class="time-group">
+    <div class="time">{{time.formattedMinutes}}</div>
+    <div class="description">minutes</div>
+  </div>
+  <div class="time-group">
+    <div class="time">{{time.formattedSeconds}}</div>
+    <div class="description">seconds</div>
+  </div>
 </div>

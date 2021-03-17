@@ -1,17 +1,3 @@
-@keyframes timeChange {
-  0% {
-    color: #3e3e3e;
-  }
-
-  50% {
-    color: black;
-  }
-
-  100% {
-    color: #3e3e3e;
-  }
-}
-
 :host {
   display: flex;
   width: 100%;
@@ -20,7 +6,26 @@
 }
 
 .the-best-timer-of-your-life {
-  font-size: 50vh;
-  animation: timeChange 1s linear infinite;
-  transition: 1s linear;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  .time-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1vh 4vw;
+
+    .time {
+      font-size: 24vh;
+      line-height: 24vh;
+    }
+
+    .description {
+      font-size: 5vh;
+      line-height: 5vh;
+      text-transform: uppercase;
+    }
+  }
 }
