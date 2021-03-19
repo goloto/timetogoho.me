@@ -11,21 +11,42 @@
   flex-wrap: wrap;
   justify-content: space-around;
 
-  .time-group {
+  .wrap-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 1vh 4vw;
+    flex-direction: row;
 
-    .time {
-      font-size: 24vh;
-      line-height: 24vh;
+    .time-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 1vh 2vw;
+
+      .time {
+        font-size: 24vh;
+        line-height: 24vh;
+      }
+
+      .description {
+        font-size: 5vh;
+        line-height: 5vh;
+        text-transform: uppercase;
+      }
     }
 
-    .description {
-      font-size: 5vh;
-      line-height: 5vh;
-      text-transform: uppercase;
+    .text-group {
+      display: flex;
+      align-items: center;
+      margin: 1vh 2vw;
+
+      .text {
+        color: #bfbfbf;
+        font-size: 5vh;
+        text-transform: uppercase;
+        text-align: center;
+        height: min-content;
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
+      }
     }
   }
 }
