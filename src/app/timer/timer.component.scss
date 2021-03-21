@@ -10,44 +10,59 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
 
-  .wrap-container {
+  .time-group {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    margin: 1vh 2vw;
 
+    .time {
+      font-size: 24vh;
+      line-height: 24vh;
+    }
+
+    .description {
+      font-size: 5vh;
+      line-height: 5vh;
+      text-transform: uppercase;
+    }
+  }
+
+  .text-group {
+    display: flex;
+    align-items: center;
+    margin: 1vh 2vw;
+
+    .text {
+      color: #bfbfbf;
+      font-size: 5vh;
+      line-height: 5vh;
+      text-transform: uppercase;
+      text-align: center;
+      height: min-content;
+
+      &_vertical {
+        width: 5vh;
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .the-best-timer-of-your-life {
     .time-group {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 1vh 2vw;
-
-      .time {
-        font-size: 24vh;
-        line-height: 24vh;
-      }
-
-      .description {
-        font-size: 5vh;
-        line-height: 5vh;
-        text-transform: uppercase;
-      }
+      margin: 1vh 4vw;
     }
 
     .text-group {
-      display: flex;
-      align-items: center;
-      margin: 1vh 2vw;
+      margin: 1vh 4vw;
 
-      .text {
-        color: #bfbfbf;
-        width: 5vh;
-        font-size: 5vh;
-        line-height: 5vh;
-        text-transform: uppercase;
-        text-align: center;
-        height: min-content;
-        writing-mode: vertical-lr;
-        transform: rotate(180deg);
+      &_vertical {
+        display: none;
       }
     }
   }

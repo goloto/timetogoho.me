@@ -1,35 +1,29 @@
 <div class="the-best-timer-of-your-life">
-  <div class="wrap-container">
-    <div class="text-group">
-      <div class="text">time</div>
-    </div>
-    <div class="time-group">
-      <div class="time">{{time.formattedHours}}</div>
-      <div class="description">hours</div>
-    </div>
-    <div class="text-group">
-      <div class="text" *ngIf="time.isWorkingDay">to</div>
-      <div class="text" *ngIf="!time.isWorkingDay">until</div>
-    </div>
+  <div class="text-group text-group_vertical">
+    <div class="text text_vertical">time</div>
   </div>
-  <div class="wrap-container">
-    <div class="time-group">
-      <div class="time">{{time.formattedMinutes}}</div>
-      <div class="description">minutes</div>
-    </div>
+  <div class="time-group">
+    <div class="time">{{time.formattedHours}}</div>
+    <div class="description">hours</div>
   </div>
-  <div class="wrap-container">
-    <div class="text-group">
-      <div class="text" *ngIf="time.isWorkingDay">go</div>
-      <div class="text" *ngIf="!time.isWorkingDay">working</div>
-    </div>
-    <div class="time-group">
-      <div class="time">{{time.formattedSeconds}}</div>
-      <div class="description">seconds</div>
-    </div>
-    <div class="text-group">
-      <div class="text" *ngIf="time.isWorkingDay">home</div>
-      <div class="text" *ngIf="!time.isWorkingDay">day</div>
-    </div>
+  <div class="text-group text-group_vertical">
+    <div class="text text_vertical" *ngIf="time.isWorkingDay">to</div>
+    <div class="text text_vertical" *ngIf="!time.isWorkingDay">until</div>
+  </div>
+  <div class="time-group">
+    <div class="time text_vertical">{{time.formattedMinutes}}</div>
+    <div class="description">minutes</div>
+  </div>
+  <div class="text-group text-group_vertical">
+    <div class="text text_vertical" *ngIf="time.isWorkingDay">go</div>
+    <div class="text text_vertical" *ngIf="!time.isWorkingDay">working</div>
+  </div>
+  <div class="time-group">
+    <div class="time">{{time.formattedSeconds}}</div>
+    <div class="description">seconds</div>
+  </div>
+  <div class="text-group text-group_vertical">
+    <div class="text text_vertical" *ngIf="time.isWorkingDay">home</div>
+    <div class="text text_vertical" *ngIf="!time.isWorkingDay">day</div>
   </div>
 </div>
