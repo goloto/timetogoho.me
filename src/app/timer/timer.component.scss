@@ -6,17 +6,15 @@
 }
 
 .the-best-timer-of-your-life {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(7, max-content);
+  grid-column-gap: 4vw;
 
   .time-group {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 1vh 2vw;
+    //margin: 1vh 2vw;
 
     .time {
       font-size: 24vh;
@@ -32,8 +30,25 @@
 
   .text-group {
     display: flex;
-    align-items: center;
-    margin: 1vh 2vw;
+    justify-content: center;
+    //margin: 1vh 2vw;
+
+    &_union {
+      display: none;
+
+      .text {
+        writing-mode: unset;
+        transform: none;
+      }
+    }
+
+    &_separated {
+      .text {
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
+        width: 5vh;
+      }
+    }
 
     .text {
       color: #bfbfbf;
@@ -41,28 +56,60 @@
       line-height: 5vh;
       text-transform: uppercase;
       text-align: center;
-      height: min-content;
+    }
+  }
+}
 
-      &_vertical {
-        width: 5vh;
-        writing-mode: vertical-lr;
-        transform: rotate(180deg);
+@media (max-width: 920px) {
+  .the-best-timer-of-your-life {
+    grid-template-columns: repeat(2, 35vw);
+    grid-row-gap: 4vh;
+
+    .text-group {
+      &_union {
+        display: flex;
+        align-items: center;
+      }
+
+      &_separated {
+        display: none;
       }
     }
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 540px) {
   .the-best-timer-of-your-life {
+    grid-template-columns: 100vw;
+    grid-row-gap: 3vh;
+
     .time-group {
-      margin: 1vh 4vw;
+      .time {
+        font-size: 21vh;
+        line-height: 18vh;
+      }
+
+      .description {
+        font-size: 4vh;
+        line-height: 4vh;
+      }
     }
 
     .text-group {
-      margin: 1vh 4vw;
-
-      &_vertical {
+      &_union {
         display: none;
+      }
+
+      &_separated {
+        display: flex;
+
+        .text {
+          font-size: 2vh;
+          line-height: 2vh;
+          writing-mode: unset;
+          transform: none;
+          width: auto;
+        }
       }
     }
   }
