@@ -7,14 +7,13 @@
 
 .the-best-timer-of-your-life {
   display: grid;
-  grid-template-columns: repeat(7, max-content);
+  grid-template-columns: repeat(3, 4vw 12vw) 4vw;
   grid-column-gap: 4vw;
 
   .time-group {
     display: flex;
     flex-direction: column;
     align-items: center;
-    //margin: 1vh 2vw;
 
     .time {
       font-size: 24vh;
@@ -31,7 +30,6 @@
   .text-group {
     display: flex;
     justify-content: center;
-    //margin: 1vh 2vw;
 
     &_union {
       display: none;
