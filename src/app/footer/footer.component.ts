@@ -9,7 +9,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
         height: '0',
       })),
       state('open', style({
-        height: '6vh',
+        height: '*',
       })),
       transition('open <=> closed', [
         animate('0.2s')
