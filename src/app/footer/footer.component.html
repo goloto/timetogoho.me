@@ -1,8 +1,8 @@
 <div class="footer">
-  <button (click)="toggleMenuVisibility()">
+  <button (click)="toggleMenuVisibility()" [@isArrowReversed]="isMenuOpen ? 'not-reversed' : 'reversed'">
     <span [@isArrowsUp]="isMenuOpen ? 'down' : 'up'" class="arrow arrow_first"></span>
     <span [@isArrowsUp]="isMenuOpen ? 'down' : 'up'" class="arrow arrow_second"></span>
-    <span [@isArrowsUp]="isMenuOpen ? 'down' : 'up'" class="arrow arrow_second"></span>
+    <span [@isArrowsUp]="isMenuOpen ? 'down' : 'up'" class="arrow arrow_third"></span>
   </button>
   <ul [@isMenuOpen]="isMenuOpen ? 'open' : 'closed'" class="menu">
     <li><a href="/about">about</a></li>

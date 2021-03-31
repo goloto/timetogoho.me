@@ -1,3 +1,17 @@
+@keyframes flickering {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: .5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 :host {
   display: flex;
   flex-direction: column;
@@ -14,55 +28,52 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   position: absolute;
   bottom: 0;
-
   background: white;
 
   button {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     padding: 1vh;
-
     background: none;
     outline: none;
     border: none;
-
     cursor: pointer;
 
     .arrow {
       display: block;
-
       border-right: 1vh solid black;
       border-bottom: 1vh solid black;
-
+      border-radius: .3vh;
       width: 1vh;
       height: 1vh;
+      animation: flickering 1s infinite;
+      animation-direction: alternate;
 
-      &_up {
-        transform: rotate(-135deg);
+      &_first {
+
       }
 
-      &_down {
-        transform: rotate(45deg);
+      &_second {
+        animation-delay: .1s;
+      }
+
+      &_third {
+        animation-delay: .2s;
       }
     }
   }
 
   ul.menu {
     list-style: none;
-
     display: flex;
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-around;
-
     overflow: hidden;
-
     padding: 0;
     margin: 0;
 

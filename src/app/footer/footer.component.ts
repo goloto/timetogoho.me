@@ -26,6 +26,14 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
         animate('0.2s')
       ]),
     ]),
+    trigger('isArrowReversed', [
+      state('not-reversed', style({
+        flexDirection: 'column',
+      })),
+      state('reversed', style({
+        flexDirection: 'column-reverse',
+      })),
+    ]),
   ],
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
