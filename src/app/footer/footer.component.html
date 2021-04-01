@@ -1,4 +1,4 @@
-<div class="footer">
+<div class="footer" [@isFooterExpanded]="isMenuOpen ? 'expanded' : 'not-expanded'">
   <button (click)="toggleMenuVisibility()" [@isArrowReversed]="isMenuOpen ? 'not-reversed' : 'reversed'">
     <span [@isArrowsUp]="isMenuOpen ? 'down' : 'up'" class="arrow arrow_first"></span>
     <span [@isArrowsUp]="isMenuOpen ? 'down' : 'up'" class="arrow arrow_second"></span>

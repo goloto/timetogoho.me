@@ -34,6 +34,14 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
         flexDirection: 'column-reverse',
       })),
     ]),
+    trigger('isFooterExpanded', [
+      state('expanded', style({
+        boxShadow: '0vh -.1vh 1vh gray',
+      })),
+      state('not-expanded', style({
+        boxShadow: 'none',
+      })),
+    ]),
   ],
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
