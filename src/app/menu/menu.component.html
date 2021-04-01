@@ -1,1 +1,14 @@
-<div class="menu"></div>
+<div class="header-menu" [@isHeaderMenuExpanded]="isMenuOpen ? 'expanded' : 'not-expanded'">
+  <ul [@isMenuOpen]="isMenuOpen ? 'open' : 'closed'" class="menu">
+    <li><a href="/about">about</a></li>
+    <li><a href="/cookies">cookies policy</a></li>
+    <li><a href="https://goloto.dev" target="_blank">goloto.dev</a></li>
+    <li><a href="https://github.com/goloto/timetogoho.me" target="_blank">github</a></li>
+    <li>2021</li>
+  </ul>
+  <button (click)="toggleMenuVisibility()" [@isArrowReversed]="isMenuOpen ? 'reversed' : 'not-reversed'">
+    <span [@isArrowsUp]="isMenuOpen ? 'up' : 'down'" class="arrow arrow_first"></span>
+    <span [@isArrowsUp]="isMenuOpen ? 'up' : 'down'" class="arrow arrow_second"></span>
+    <span [@isArrowsUp]="isMenuOpen ? 'up' : 'down'" class="arrow arrow_third"></span>
+  </button>
+</div>
