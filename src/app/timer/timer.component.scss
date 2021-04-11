@@ -64,17 +64,17 @@
   }
 }
 
-@media (max-width: 920px) {
+@media (max-aspect-ratio: 8 / 7) {
   :host {
-    --main-font-size: 24vw;
-    --second-font-size: 5vw;
-    --third-font-size: 5vw;
+    --main-font-size: 26vw;
+    --second-font-size: 6vw;
+    --third-font-size: 6vw;
   }
 
   .the-best-timer-of-your-life {
-    grid-template-columns: repeat(2, 45vw);
-    grid-column-gap: 2vw;
-    grid-row-gap: 2vw;
+    grid-template-columns: repeat(2, 32vw);
+    grid-column-gap: 10vw;
+    grid-row-gap: 10vw;
 
     .text-group {
       &_union {
@@ -89,7 +89,7 @@
   }
 }
 
-@media (max-width: 540px) {
+@media (max-aspect-ratio: 9 / 16) {
   :host {
     --main-font-size: 21vh;
     --second-font-size: 4vh;
