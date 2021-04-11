@@ -3,11 +3,15 @@
   width: 100%;
   justify-content: center;
   align-items: center;
+
+  --main-font-size: 15vw;
+  --second-font-size: 3vw;
+  --third-font-size: 3vw;
 }
 
 .the-best-timer-of-your-life {
   display: grid;
-  grid-template-columns: repeat(3, 4vw 12vw) 4vw;
+  grid-template-columns: repeat(3, 3vw 18vw) 4vw;
   grid-column-gap: 4vw;
 
   .time-group {
@@ -16,13 +20,13 @@
     align-items: center;
 
     .time {
-      font-size: 24vh;
-      line-height: 24vh;
+      font-size: var(--main-font-size);
+      line-height: var(--main-font-size);
     }
 
     .description {
-      font-size: 5vh;
-      line-height: 5vh;
+      font-size: var(--second-font-size);
+      line-height: var(--second-font-size);
       text-transform: uppercase;
     }
   }
@@ -44,24 +48,33 @@
       .text {
         writing-mode: vertical-lr;
         transform: rotate(180deg);
-        width: 5vh;
       }
     }
 
     .text {
-      color: #bfbfbf;
-      font-size: 5vh;
-      line-height: 5vh;
-      text-transform: uppercase;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      color: #bfbfbf;
+      font-size: var(--third-font-size);
+      line-height: var(--third-font-size);
+      text-transform: uppercase;
     }
   }
 }
 
 @media (max-width: 920px) {
+  :host {
+    --main-font-size: 24vw;
+    --second-font-size: 5vw;
+    --third-font-size: 5vw;
+  }
+
   .the-best-timer-of-your-life {
-    grid-template-columns: repeat(2, 35vw);
-    grid-row-gap: 4vh;
+    grid-template-columns: repeat(2, 45vw);
+    grid-column-gap: 2vw;
+    grid-row-gap: 2vw;
 
     .text-group {
       &_union {
@@ -77,19 +90,19 @@
 }
 
 @media (max-width: 540px) {
+  :host {
+    --main-font-size: 21vh;
+    --second-font-size: 4vh;
+    --third-font-size: 2vh;
+  }
+
   .the-best-timer-of-your-life {
     grid-template-columns: 100vw;
     grid-row-gap: 1vh;
 
     .time-group {
       .time {
-        font-size: 21vh;
         line-height: 18vh;
-      }
-
-      .description {
-        font-size: 4vh;
-        line-height: 4vh;
       }
     }
 
@@ -102,8 +115,6 @@
         display: flex;
 
         .text {
-          font-size: 2vh;
-          line-height: 2vh;
           writing-mode: unset;
           transform: none;
           width: auto;
