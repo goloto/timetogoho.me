@@ -1,5 +1,5 @@
-import { TimeFunctions } from '../other/time-functions';
-import { Injectable } from "@angular/core";
+import { TimeFunctions } from './time-functions';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
