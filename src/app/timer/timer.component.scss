@@ -1,12 +1,12 @@
 :host {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-
   --main-font-size: 15vw;
   --second-font-size: 3vw;
   --third-font-size: 3vw;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .the-best-timer-of-your-life {
@@ -55,6 +55,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+
       text-align: center;
       color: #bfbfbf;
       font-size: var(--third-font-size);
@@ -73,8 +74,7 @@
 
   .the-best-timer-of-your-life {
     grid-template-columns: repeat(2, 32vw);
-    grid-column-gap: 10vw;
-    grid-row-gap: 10vw;
+    gap: 10vw;
 
     .text-group {
       &_union {
@@ -115,9 +115,10 @@
         display: flex;
 
         .text {
+          width: auto;
+
           writing-mode: unset;
           transform: none;
-          width: auto;
         }
       }
     }

@@ -1,6 +1,10 @@
-import {TimeFunctions} from "./TimeFunctions";
+import { Injectable } from '@angular/core';
+import { TimeFunctions } from '../other/time-functions';
 
-export class TimerTime {
+@Injectable({
+  providedIn: 'root'
+})
+export class TimerService {
   private _hours!: number;
   private _minutes!: number;
   private _seconds!: number;
