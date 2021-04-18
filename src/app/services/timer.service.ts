@@ -1,16 +1,13 @@
 import { Injectable } from '@angular/core';
 import { TimeFunctions } from '../other/time-functions';
+import { Observable, of } from 'rxjs';
+import { Timer } from '../other/timer';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TimerService {
-  private _hours!: number;
-  private _minutes!: number;
-  private _seconds!: number;
-  private _formattedHours!: string;
-  private _formattedMinutes!: string;
-  private _formattedSeconds!: string;
+  private _timer: Timer;
   private _dayStartHours = 9;
   private _dayStartMinutes = 0;
   private _dayEndHours = 18;
@@ -18,6 +15,8 @@ export class TimerService {
   private _isWorkingDay = false;
 
   constructor() {
+    this._timer = new Timer();
+
     this.updateTime();
   }
 
@@ -28,66 +27,21 @@ export class TimerService {
     return (hoursUntilEnd <= workingDayLength);
   }
 
-  public updateTime(): void {
-    const currentTime = new Date();
+  private updateTime(): void {
     const secondsInMinute = 60;
     const incompletePiece = 1;
+    const currentTime = new Date();
     this.isWorkingDay = this.isWorkingHour(currentTime.getHours());
 
     if (this.isWorkingHour(currentTime.getHours())) {
-      this.hours = TimeFunctions.calcHoursDifferent(currentTime.getHours(), this.dayEndHours) - incompletePiece;
-      this.minutes = TimeFunctions.calcMinutesDifferent(currentTime.getMinutes(), this.dayEndMinutes) - incompletePiece;
+      this._timer.hours = TimeFunctions.calcHoursDifferent(currentTime.getHours(), this.dayEndHours) - incompletePiece;
+      this._timer.minutes = TimeFunctions.calcMinutesDifferent(currentTime.getMinutes(), this.dayEndMinutes) - incompletePiece;
     } else {
-      this.hours = TimeFunctions.calcHoursDifferent(currentTime.getHours(), this.dayStartHours) - incompletePiece;
-      this.minutes = TimeFunctions.calcMinutesDifferent(currentTime.getMinutes(), this.dayStartMinutes) - incompletePiece;
+      this._timer.hours = TimeFunctions.calcHoursDifferent(currentTime.getHours(), this.dayStartHours) - incompletePiece;
+      this._timer.minutes = TimeFunctions.calcMinutesDifferent(currentTime.getMinutes(), this.dayStartMinutes) - incompletePiece;
     }
 
-    this.seconds = (secondsInMinute - incompletePiece) - currentTime.getSeconds();
-  }
-
-  set hours(value: number) {
-    if (value >= 0) {
-      this._hours = value;
-      this._formattedHours = TimeFunctions.convertToBinaryString(value);
-    }
-  }
-
-  get hours(): number {
-    return this._hours;
-  }
-
-  set minutes(value: number) {
-    if (value >= 0) {
-      this._minutes = value;
-      this._formattedMinutes = TimeFunctions.convertToBinaryString(value);
-    }
-  }
-
-  get minutes(): number {
-    return this._minutes;
-  }
-
-  set seconds(value: number) {
-    if (value >= 0) {
-      this._seconds = value;
-      this._formattedSeconds = TimeFunctions.convertToBinaryString(value);
-    }
-  }
-
-  get seconds(): number {
-    return this._seconds;
-  }
-
-  get formattedHours(): string {
-    return this._formattedHours;
-  }
-
-  get formattedMinutes(): string {
-    return this._formattedMinutes;
-  }
-
-  get formattedSeconds(): string {
-    return this._formattedSeconds;
+    this._timer.seconds = (secondsInMinute - incompletePiece) - currentTime.getSeconds();
   }
 
   set dayStartHours(value: number) {
@@ -136,5 +90,15 @@ export class TimerService {
 
   get isWorkingDay(): boolean {
     return this._isWorkingDay;
+  }
+
+  get timer(): Observable<Timer> {
+    return new Observable<Timer>((subscription => {
+      subscription.next(this._timer);
+      setInterval(() => {
+        this.updateTime();
+        subscription.next(this._timer);
+      }, 1000);
+    }));
   }
 }

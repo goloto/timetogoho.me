@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TimerService } from '../services/timer.service';
+import { Observable } from 'rxjs';
+import { Timer } from '../other/timer';
 
 @Component({
   selector: 'app-timer',
@@ -7,16 +9,21 @@ import { TimerService } from '../services/timer.service';
   styleUrls: ['./timer.component.scss']
 })
 export class TimerComponent implements OnInit {
-  public time: TimerService;
-
-  constructor() {
-    this.time = new TimerService();
+  constructor(
+    public timer: Timer,
+    public timerService: TimerService
+  ) {
+    this.timerService = new TimerService();
+    this.timer = new Timer();
   }
 
   ngOnInit(): void {
-    setInterval(() => {
-      this.time.updateTime();
-    }, 1000);
+    this
+      .timerService
+      .timer
+      .subscribe(
+      (timer) => {
+        this.timer = timer;
+      });
   }
-
 }
