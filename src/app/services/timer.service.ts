@@ -18,16 +18,16 @@ export class TimerService {
   }
 
   private isWorkingHour(hour: number): boolean {
-    const hoursUntilEnd = TimeFunctions.calcHoursDifferent(
+    const hoursUntilDayEnd = TimeFunctions.calcHoursDifferent(
       hour,
       this._data.settings.dayEndHours
     );
     const workingDayLength = TimeFunctions.calcHoursDifferent(
       this._data.settings.dayStartHours,
-      this._data.settings.dayEndHours)
-    ;
+      this._data.settings.dayEndHours
+    );
 
-    return (hoursUntilEnd <= workingDayLength);
+    return (hoursUntilDayEnd <= workingDayLength);
   }
 
   private updateServiceData(): void {
@@ -37,27 +37,33 @@ export class TimerService {
     this._data.settings.isWorkingDay = this.isWorkingHour(currentTime.getHours());
 
     if (this.isWorkingHour(currentTime.getHours())) {
+
       this._data.timer.hours =
         TimeFunctions.calcHoursDifferent(
           currentTime.getHours(),
           this._data.settings.dayEndHours
         ) - incompletePiece;
+
       this._data.timer.minutes =
         TimeFunctions.calcMinutesDifferent(
           currentTime.getMinutes(),
           this._data.settings.dayEndMinutes
         ) - incompletePiece;
+
     } else {
+
       this._data.timer.hours =
         TimeFunctions.calcHoursDifferent(
           currentTime.getHours(),
           this._data.settings.dayStartHours
         ) - incompletePiece;
+
       this._data.timer.minutes =
         TimeFunctions.calcMinutesDifferent(
           currentTime.getMinutes(),
           this._data.settings.dayStartMinutes
         ) - incompletePiece;
+
     }
 
     this._data.timer.seconds = (secondsInMinute - incompletePiece) - currentTime.getSeconds();
