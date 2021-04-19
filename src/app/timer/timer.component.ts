@@ -18,7 +18,7 @@ export class TimerComponent implements OnInit {
   ngOnInit(): void {
     this
       .timerService
-      .data
+      .observedData
       .subscribe(
       (data) => {
         this.timerServiceData = data;

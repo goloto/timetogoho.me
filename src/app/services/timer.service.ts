@@ -69,7 +69,11 @@ export class TimerService {
     this._data.timer.seconds = (secondsInMinute - incompletePiece) - currentTime.getSeconds();
   }
 
-  get data(): Observable<TimerServiceData> {
+  get data(): TimerServiceData {
+    return this._data;
+  }
+
+  get observedData(): Observable<TimerServiceData> {
     return new Observable<TimerServiceData>(subscriber => {
       subscriber.next(this._data);
       setInterval(() => {
