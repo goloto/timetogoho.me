@@ -1,0 +1,14 @@
+<ul class="menu-elements" [@isMenuOpen]="isMenuOpen ? 'open' : 'closed'">
+  <li>
+    <label class="description" for="day-start">work starts at</label>
+    <input type="time" class="day-start" id="day-start" value="{{dayStart}}">
+  </li>
+  <li>
+    <label for="day-end" class="description">work ends at</label>
+    <input type="time" class="day-end" id="day-end" value="{{dayEnd}}">
+  </li>
+  <!--    <li>-->
+  <!--      <label class="description" for="working-days">working days</label>-->
+  <!--      <input type="text" class="working-days" id="working-days">-->
+  <!--    </li>-->
+</ul>

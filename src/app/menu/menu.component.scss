@@ -18,21 +18,31 @@
   align-items: center;
 }
 
-.header-menu, a {
+.menu, a {
   color: black;
   font-size: 3vh;
   text-decoration: none;
 }
 
-.header-menu {
+.menu {
+  position: absolute;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  position: absolute;
-  top: 0;
+
   background: white;
+
   transition: 0.2s;
+
+  &_upper {
+    top: 0;
+  }
+
+  &_bottom {
+    bottom: 0;
+  }
 
   button {
     display: flex;
@@ -65,26 +75,6 @@
       &_third {
         animation-delay: .2s;
       }
-    }
-  }
-
-  ul.menu {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-
-    li {
-      margin: 1vh 2vw;
-    }
-
-    a {
-      outline: none;
     }
   }
 }

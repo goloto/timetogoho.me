@@ -1,55 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { animate, state, style, transition, trigger } from '@angular/animations';
+import {Component, Input, OnInit, Output} from '@angular/core';
+import { menuAnimations } from './menu-animations';
 
 @Component({
   selector: 'app-menu',
-  animations: [
-    trigger('isMenuOpen', [
-      state('closed', style({
-        height: '0',
-      })),
-      state('open', style({
-        height: '*',
-      })),
-      transition('open <=> closed', [
-        animate('0.2s')
-      ]),
-    ]),
-    trigger('isArrowsUp', [
-      state('up', style({
-        transform: 'rotate(-135deg)',
-      })),
-      state('down', style({
-        transform: 'rotate(45deg)',
-      })),
-      transition('up <=> down', [
-        animate('0.2s')
-      ]),
-    ]),
-    trigger('isArrowReversed', [
-      state('not-reversed', style({
-        flexDirection: 'column',
-      })),
-      state('reversed', style({
-        flexDirection: 'column-reverse',
-      })),
-    ]),
-    trigger('isHeaderMenuExpanded', [
-      state('expanded', style({
-        boxShadow: '0vh -.1vh 1vh gray',
-      })),
-      state('not-expanded', style({
-        boxShadow: 'none',
-      })),
-    ]),
-  ],
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss']
+  styleUrls: ['./menu.component.scss'],
+  animations: [menuAnimations],
 })
 export class MenuComponent implements OnInit {
-  public isMenuOpen = false;
+  @Input() isUpper: boolean;
+  @Output() isMenuOpen: boolean;
 
-  constructor() {}
+  constructor() {
+    this.isUpper = false;
+    this.isMenuOpen = false;
+  }
 
   ngOnInit(): void {}
 
