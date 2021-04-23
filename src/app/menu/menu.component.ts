@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, Output} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { menuAnimations } from './menu-animations';
 
 @Component({
@@ -8,17 +8,8 @@ import { menuAnimations } from './menu-animations';
   animations: [menuAnimations],
 })
 export class MenuComponent implements OnInit {
-  @Input() isUpper: boolean;
-  @Output() isMenuOpen: boolean;
-
-  constructor() {
-    this.isUpper = false;
-    this.isMenuOpen = false;
-  }
+  @Input() isUpper = false;
+  @Input() isMenuOpen = false;
 
   ngOnInit(): void {}
-
-  toggleMenuVisibility(): void {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
 }

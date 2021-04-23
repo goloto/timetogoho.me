@@ -8,6 +8,7 @@ import { TimerComponent } from './timer/timer.component';
 import { MenuComponent } from './menu/menu.component';
 import { UpperMenuComponent } from './menu/upper-menu/upper-menu.component';
 import { BottomMenuComponent } from './menu/bottom-menu/bottom-menu.component';
+import { ArrowComponent } from './menu/arrow/arrow.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { BottomMenuComponent } from './menu/bottom-menu/bottom-menu.component';
     TimerComponent,
     MenuComponent,
     UpperMenuComponent,
-    BottomMenuComponent
+    BottomMenuComponent,
+    ArrowComponent
   ],
   imports: [
     BrowserModule,

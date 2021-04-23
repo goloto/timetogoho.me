@@ -1,6 +1,6 @@
-import {animate, state, style, transition, trigger} from "@angular/animations";
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
-export const onMenuOpenAnimation = [
+export const onMenuOpenAnimations = [
   trigger('isMenuOpen', [
     state('closed', style({
       height: '0',
@@ -12,4 +12,4 @@ export const onMenuOpenAnimation = [
       animate('0.2s')
     ]),
   ]),
-]
+];
