@@ -28,11 +28,19 @@ ul.menu-elements {
       background-color: var(--soft-color_2_hover);
     }
 
-    &:nth-child(odd) {
-      background-color: var(--soft-color_2_alt);
+    &:nth-child(2n) {
+      background-color: var(--soft-color_3);
 
       &:hover {
-        background-color: var(--soft-color_2_alt_hover);
+        background-color: var(--soft-color_3_hover);
+      }
+    }
+
+    &:nth-child(3n) {
+      background-color: var(--soft-color_4);
+
+      &:hover {
+        background-color: var(--soft-color_4_hover);
       }
     }
 
