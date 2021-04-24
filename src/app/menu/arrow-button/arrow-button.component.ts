@@ -1,14 +1,14 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
-import { arrowAnimations } from './arrow-animations';
+import { arrowButtonAnimations } from './arrow-button-animations';
 
 @Component({
-  selector: 'app-arrow',
-  templateUrl: './arrow.component.html',
-  styleUrls: ['./arrow.component.scss'],
-  animations: [arrowAnimations]
+  selector: 'app-arrow-button',
+  templateUrl: './arrow-button.component.html',
+  styleUrls: ['./arrow-button.component.scss'],
+  animations: [arrowButtonAnimations]
 })
-export class ArrowComponent implements OnInit {
+export class ArrowButtonComponent implements OnInit {
   @Input() title = '';
   @Input() isMenuOpen = false;
   @Input() isUpper = false;

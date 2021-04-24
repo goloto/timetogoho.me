@@ -3,23 +3,23 @@
   [@isMenuExpanded]="isMenuOpen ? 'expanded' : 'not-expanded'"
 >
 
-  <app-arrow
+  <app-arrow-button
     *ngIf="!isUpper"
     [isUpper]="isUpper"
     [title]="' links'"
     [(isMenuOpen)]="isMenuOpen"
   >
-  </app-arrow>
+  </app-arrow-button>
 
   <app-upper-menu *ngIf="isUpper" [isMenuOpen]="isMenuOpen"></app-upper-menu>
   <app-bottom-menu *ngIf="!isUpper" [isMenuOpen]="isMenuOpen"></app-bottom-menu>
 
-  <app-arrow
+  <app-arrow-button
     *ngIf="isUpper"
     [isUpper]="isUpper"
     [title]="' settings'"
     [(isMenuOpen)]="isMenuOpen"
   >
-  </app-arrow>
+  </app-arrow-button>
 
 </div>

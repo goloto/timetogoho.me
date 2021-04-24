@@ -1,6 +1,6 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 
-export const arrowAnimations = [
+export const arrowButtonAnimations = [
   trigger('animationDirection', [
     state('not-reversed', style({
       flexDirection: 'column',
