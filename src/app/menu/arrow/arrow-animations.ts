@@ -20,4 +20,15 @@ export const arrowAnimations = [
       animate('0.2s')
     ]),
   ]),
+  trigger('isMenuOpen', [
+    state('open', style({
+      opacity: 1,
+    })),
+    state('closed', style({
+      opacity: '*',
+    })),
+    transition('open <=> closed', [
+      animate('0.2s')
+    ]),
+  ])
 ];

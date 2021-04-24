@@ -2,8 +2,24 @@
   [class]="['menu', isUpper ? 'menu_upper' : 'menu_bottom']"
   [@isMenuExpanded]="isMenuOpen ? 'expanded' : 'not-expanded'"
 >
-  <app-arrow *ngIf="!isUpper" [isUpper]="isUpper" [(isMenuOpen)]="isMenuOpen"></app-arrow>
+
+  <app-arrow
+    *ngIf="!isUpper"
+    [isUpper]="isUpper"
+    [title]="' links'"
+    [(isMenuOpen)]="isMenuOpen"
+  >
+  </app-arrow>
+
   <app-upper-menu *ngIf="isUpper" [isMenuOpen]="isMenuOpen"></app-upper-menu>
   <app-bottom-menu *ngIf="!isUpper" [isMenuOpen]="isMenuOpen"></app-bottom-menu>
-  <app-arrow *ngIf="isUpper" [isUpper]="isUpper" [(isMenuOpen)]="isMenuOpen"></app-arrow>
+
+  <app-arrow
+    *ngIf="isUpper"
+    [isUpper]="isUpper"
+    [title]="' settings'"
+    [(isMenuOpen)]="isMenuOpen"
+  >
+  </app-arrow>
+
 </div>

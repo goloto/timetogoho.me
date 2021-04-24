@@ -1,5 +1,15 @@
 <button (click)="toggleMenuVisibility()" [@isArrowReversed]="isMenuOpen ? 'reversed' : 'not-reversed'">
-  <span [@isArrowsUp]="calcArrowDirection()" class="arrow arrow_first"></span>
-  <span [@isArrowsUp]="calcArrowDirection()" class="arrow arrow_second"></span>
-  <span [@isArrowsUp]="calcArrowDirection()" class="arrow arrow_third"></span>
+  <span class="arrow-button-grid">
+    <span [@isMenuOpen]="isMenuOpen ? 'open' : 'closed'" class="long-column">
+      <span *ngIf="isUpper">{{title}}</span>
+    </span>
+    <span class="arrow-column">
+      <span [@isArrowsUp]="calcArrowDirection()" class="arrow arrow_first"></span>
+      <span [@isArrowsUp]="calcArrowDirection()" class="arrow arrow_second"></span>
+      <span [@isArrowsUp]="calcArrowDirection()" class="arrow arrow_third"></span>
+    </span>
+    <span [@isMenuOpen]="isMenuOpen ? 'open' : 'closed'" class="long-column">
+      <span *ngIf="!isUpper">{{title}}</span>
+    </span>
+  </span>
 </button>

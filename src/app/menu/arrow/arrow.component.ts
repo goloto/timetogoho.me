@@ -9,6 +9,7 @@ import { arrowAnimations } from './arrow-animations';
   animations: [arrowAnimations]
 })
 export class ArrowComponent implements OnInit {
+  @Input() title = '';
   @Input() isMenuOpen = false;
   @Input() isUpper = false;
   @Output() isMenuOpenChange = new EventEmitter<boolean>();
