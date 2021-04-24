@@ -29,8 +29,8 @@ button {
 
   .arrow {
     display: block;
-    border-right: 1vh solid black;
-    border-bottom: 1vh solid black;
+    border-right: 1vh solid var(--font-color);
+    border-bottom: 1vh solid var(--font-color);
     border-radius: .3vh;
     width: 1vh;
     height: 1vh;
