@@ -16,16 +16,16 @@ ul.menu-elements {
     flex-direction: column;
     margin: 1vh 2vw;
 
-    color: var(--font-color);
+    color: var(--contrast-color_light_main);
     font-size: 22px;
 
     a {
-      color: var(--font-color);
+      color: var(--contrast-color_light_main);
       text-decoration: none;
     }
 
     input {
-      color: var(--font-color);
+      color: var(--contrast-color_light_main);
       font-size: 40px;
       font-family: 'viga';
       outline: none;

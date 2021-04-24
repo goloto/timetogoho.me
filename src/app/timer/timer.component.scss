@@ -19,7 +19,7 @@
     flex-direction: column;
     align-items: center;
 
-    color: var(--font-color);
+    color: var(--contrast-color_light_main);
 
     .time {
       font-size: var(--main-font-size);
@@ -59,7 +59,7 @@
       align-items: center;
 
       text-align: center;
-      color: var(--misc-color);
+      color: var(--soft-color_light_second);
       font-size: var(--third-font-size);
       line-height: var(--third-font-size);
       text-transform: uppercase;
