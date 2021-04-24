@@ -17,7 +17,7 @@ ul.menu-elements {
     margin: 1vh 2vw;
 
     color: var(--font-color);
-    font-size: 3vh;
+    font-size: 22px;
 
     a {
       color: var(--font-color);
@@ -25,16 +25,13 @@ ul.menu-elements {
     }
 
     input {
+      color: var(--font-color);
+      font-size: 40px;
       font-family: 'viga';
-      font-size: 4vh;
       outline: none;
 
       background-color: transparent;
       border: none;
-    }
-
-    .description {
-      font-size: 2vh;
     }
   }
 }
