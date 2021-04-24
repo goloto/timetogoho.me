@@ -21,6 +21,14 @@ export class ArrowComponent implements OnInit {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
+  calcArrowAnimationDirection(): string {
+    if (this.isUpper) {
+      return this.isMenuOpen ? 'reversed' : 'not-reversed';
+    } else {
+      return this.isMenuOpen ? 'not-reversed' : 'reversed';
+    }
+  }
+
   calcArrowDirection(): string {
     if (this.isUpper) {
       return this.isMenuOpen ? 'up' : 'down';

@@ -1,7 +1,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 
 export const arrowAnimations = [
-  trigger('isArrowReversed', [
+  trigger('animationDirection', [
     state('not-reversed', style({
       flexDirection: 'column',
     })),
@@ -9,7 +9,7 @@ export const arrowAnimations = [
       flexDirection: 'column-reverse',
     })),
   ]),
-  trigger('isArrowsUp', [
+  trigger('arrowDirection', [
     state('up', style({
       transform: 'rotate(-135deg)',
     })),
@@ -20,7 +20,7 @@ export const arrowAnimations = [
       animate('0.2s')
     ]),
   ]),
-  trigger('isMenuOpen', [
+  trigger('menuState', [
     state('open', style({
       opacity: 1,
     })),
