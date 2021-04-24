@@ -16,11 +16,20 @@ ul.menu-elements {
     flex-direction: column;
     margin: 1vh 2vw;
 
+    color: var(--font-color);
+    font-size: 3vh;
+
+    a {
+      color: var(--font-color);
+      text-decoration: none;
+    }
+
     input {
       font-family: 'viga';
       font-size: 4vh;
       outline: none;
 
+      background-color: transparent;
       border: none;
     }
 
