@@ -2,12 +2,12 @@ import {Component, Input, OnInit} from '@angular/core';
 import { onMenuOpenAnimations } from '../on-menu-open-animations';
 
 @Component({
-  selector: 'app-upper-menu',
-  templateUrl: './upper-menu.component.html',
+  selector: 'app-top-menu',
+  templateUrl: './top-menu.component.html',
   styleUrls: ['../menu-elements.scss'],
   animations: [onMenuOpenAnimations]
 })
-export class UpperMenuComponent implements OnInit {
+export class TopMenuComponent implements OnInit {
   @Input() isMenuOpen: boolean;
   public workStarts = new Date();
   public workEnds = new Date();
