@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { TimerComponent } from './timer/timer.component';
 import { MenuComponent } from './menu/menu.component';
 import { SettingsMenuComponent } from './menu/settings-menu/settings-menu.component';
-import { BottomMenuComponent } from './menu/bottom-menu/bottom-menu.component';
+import { LinksMenuComponent } from './menu/links-menu/links-menu.component';
 import { ArrowButtonComponent } from './menu/arrow-button/arrow-button.component';
 
 @NgModule({
@@ -16,7 +16,7 @@ import { ArrowButtonComponent } from './menu/arrow-button/arrow-button.component
     TimerComponent,
     MenuComponent,
     SettingsMenuComponent,
-    BottomMenuComponent,
+    LinksMenuComponent,
     ArrowButtonComponent
   ],
   imports: [
