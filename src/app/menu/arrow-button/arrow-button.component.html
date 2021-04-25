@@ -1,5 +1,5 @@
-<button (click)="toggleMenuVisibility()">
-  <span class="arrow-button-grid">
+<button (click)="toggleMenuVisibility()" class="arrow-button">
+  <span class="arrow-button__grid">
     <span class="long-column">
       <span *ngIf="isUpper" [@titleVisibility]="isMenuOpen ? 'show' : 'hide'" class="menu-title">
         <span [@lineState]="isMenuOpen ? 'long' : 'short'" class="line"></span>

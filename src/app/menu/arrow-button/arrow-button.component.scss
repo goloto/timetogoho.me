@@ -1,4 +1,4 @@
-@keyframes flickering {
+@keyframes arrow-flickering {
   0% {
     opacity: 0;
   }
@@ -19,7 +19,7 @@
   background-color: var(--soft-color_1);
 }
 
-button {
+.arrow-button {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,7 +33,7 @@ button {
   cursor: pointer;
 
   &:hover {
-    .arrow-button-grid {
+    &__grid {
       .long-column {
         .menu-title {
           opacity: 1;
@@ -42,7 +42,7 @@ button {
     }
   }
 
-  .arrow-button-grid {
+  &__grid {
     width: 100%;
 
     display: grid;
@@ -115,7 +115,7 @@ button {
         border-bottom: 8px solid var(--contrast-color_1);
         border-radius: 3px;
 
-        animation: flickering 1s infinite;
+        animation: arrow-flickering 1s infinite;
         animation-direction: alternate;
 
         &_first {
