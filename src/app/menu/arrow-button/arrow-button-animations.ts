@@ -17,18 +17,29 @@ export const arrowButtonAnimations = [
       transform: 'rotate(45deg)',
     })),
     transition('up <=> down', [
-      animate('0.2s')
+      animate('.2s')
     ]),
   ]),
-  trigger('menuState', [
-    state('open', style({
+  trigger('lineState', [
+    state('long', style({
+      width: '100%',
+    })),
+    state('short', style({
+      width: '0%',
+    })),
+    transition('long => short', [
+      animate('.2s')
+    ]),
+    transition('short => long', [
+      animate('.5s')
+    ]),
+  ]),
+  trigger('titleVisibility', [
+    state('show', style({
       opacity: 1,
     })),
-    state('closed', style({
+    state('hide', style({
       opacity: '*',
     })),
-    transition('open <=> closed', [
-      animate('0.2s')
-    ]),
   ])
 ];

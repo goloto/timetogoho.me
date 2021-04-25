@@ -12,7 +12,7 @@ ul.menu-elements {
   }
 
   &_links {
-    grid-template-columns: repeat(5, 2fr) 1fr 1fr;
+    grid-template-columns: repeat(5, 2fr) repeat(2, 1fr);
   }
 
   li {

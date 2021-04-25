@@ -35,7 +35,9 @@ button {
   &:hover {
     .arrow-button-grid {
       .long-column {
-        opacity: 1;
+        .menu-title {
+          opacity: 1;
+        }
       }
     }
   }
@@ -48,8 +50,6 @@ button {
     grid-gap: 10px;
 
     .long-column {
-      opacity: 0;
-
       display: flex;
       align-items: center;
 
@@ -58,15 +58,45 @@ button {
       color: var(--contrast-color_1);
       letter-spacing: 15px;
 
-      transition: .2s;
-
       &:first-child {
-        justify-content: flex-end;
+        .menu-title {
+          justify-content: flex-end;
+
+          .line {
+            margin: 0 30px 0 0;
+          }
+        }
       }
 
       &:last-child {
-        justify-content: flex-start;
-        margin: 0 0 0 15px;
+        .menu-title {
+          justify-content: flex-start;
+          margin: 0 0 0 15px;
+
+          .line {
+            margin: 0 0 0 15px;
+          }
+        }
+      }
+
+      .menu-title {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+
+        opacity: 0;
+
+        transition: .2s;
+
+        .line {
+          width: auto;
+          height: 1px;
+
+          display: flex;
+
+          background-color: var(--soft-color_2);
+        }
       }
     }
 
