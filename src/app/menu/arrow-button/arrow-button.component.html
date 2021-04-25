@@ -1,20 +1,20 @@
 <button (click)="toggleMenuVisibility()" class="arrow-button">
-  <span class="arrow-button__grid">
-    <span class="long-column">
+  <span class="button-grid">
+    <span class="button-grid__long-column">
       <span *ngIf="isUpper" [@titleVisibility]="isMenuOpen ? 'show' : 'hide'" class="menu-title">
-        <span [@lineState]="isMenuOpen ? 'long' : 'short'" class="line"></span>
+        <span [@lineState]="isMenuOpen ? 'long' : 'short'" class="menu-title__line"></span>
         {{title}}
       </span>
     </span>
-    <span [@animationDirection]="calcArrowAnimationDirection()" class="arrow-column">
+    <span [@animationDirection]="calcArrowAnimationDirection()" class="button-grid__arrow-column">
       <span [@arrowDirection]="calcArrowDirection()" class="arrow arrow_first"></span>
       <span [@arrowDirection]="calcArrowDirection()" class="arrow arrow_second"></span>
       <span [@arrowDirection]="calcArrowDirection()" class="arrow arrow_third"></span>
     </span>
-    <span class="long-column">
+    <span class="button-grid__long-column">
       <span *ngIf="!isUpper" [@titleVisibility]="isMenuOpen ? 'show' : 'hide'"  class="menu-title">
         {{title}}
-        <span [@lineState]="isMenuOpen ? 'long' : 'short'" class="line"></span>
+        <span [@lineState]="isMenuOpen ? 'long' : 'short'" class="menu-title__line"></span>
       </span>
     </span>
   </span>
