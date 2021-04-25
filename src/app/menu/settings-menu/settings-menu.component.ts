@@ -1,13 +1,13 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { onMenuOpenAnimations } from '../on-menu-open-animations';
 
 @Component({
-  selector: 'app-top-menu',
-  templateUrl: './top-menu.component.html',
-  styleUrls: ['../menu-elements.scss', 'top-menu.component.scss'],
+  selector: 'app-settings-menu',
+  templateUrl: './settings-menu.component.html',
+  styleUrls: ['../menu-elements.scss', 'settings-menu.component.scss'],
   animations: [onMenuOpenAnimations]
 })
-export class TopMenuComponent implements OnInit {
+export class SettingsMenuComponent implements OnInit {
   @Input() isMenuOpen: boolean;
   public workStarts = new Date();
   public workEnds = new Date();
