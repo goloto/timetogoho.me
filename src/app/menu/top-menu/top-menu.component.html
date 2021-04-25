@@ -1,10 +1,10 @@
 <ul class="menu-elements menu-elements_settings" [@menuState]="isMenuOpen ? 'open' : 'closed'">
-  <li>
+  <li class="menu-elements__element">
     <label class="description" for="day-start">work starts at</label>
-    <input type="time" class="day-start" id="day-start" value="{{dayStart}}">
+    <input class="input day-start" type="time" id="day-start" value="{{dayStart}}">
   </li>
-  <li>
-    <label for="day-end" class="description">work ends at</label>
-    <input type="time" class="day-end" id="day-end" value="{{dayEnd}}">
+  <li class="menu-elements__element">
+    <label class="description" for="day-end" >work ends at</label>
+    <input class="input day-end" type="time" id="day-end" value="{{dayEnd}}">
   </li>
 </ul>

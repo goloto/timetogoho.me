@@ -1,4 +1,4 @@
-ul.menu-elements {
+.menu-elements {
   display: grid;
   padding: 4px;
   margin: 0;
@@ -7,15 +7,7 @@ ul.menu-elements {
   list-style: none;
   overflow: hidden;
 
-  &_settings {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  &_links {
-    grid-template-columns: repeat(5, 2fr) repeat(2, 1fr);
-  }
-
-  li {
+  &__element {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,7 +43,7 @@ ul.menu-elements {
       }
     }
 
-    a {
+    .link {
       width: 100%;
 
       padding: 10px 0;
@@ -61,7 +53,7 @@ ul.menu-elements {
       text-align: center;
     }
 
-    input {
+    .input {
       color: var(--contrast-color_1);
       font-size: 40px;
       font-family: 'viga';

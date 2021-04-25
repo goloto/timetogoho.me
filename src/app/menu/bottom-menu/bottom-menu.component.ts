@@ -4,7 +4,7 @@ import { onMenuOpenAnimations } from '../on-menu-open-animations';
 @Component({
   selector: 'app-bottom-menu',
   templateUrl: './bottom-menu.component.html',
-  styleUrls: ['../menu-elements.scss'],
+  styleUrls: ['../menu-elements.scss', 'bottom-menu.component.scss'],
   animations: [onMenuOpenAnimations]
 })
 export class BottomMenuComponent implements OnInit {

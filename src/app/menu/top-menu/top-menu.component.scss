@@ -1,0 +1,5 @@
+.menu-elements {
+  &_settings {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

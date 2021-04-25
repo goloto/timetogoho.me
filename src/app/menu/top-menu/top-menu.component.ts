@@ -4,7 +4,7 @@ import { onMenuOpenAnimations } from '../on-menu-open-animations';
 @Component({
   selector: 'app-top-menu',
   templateUrl: './top-menu.component.html',
-  styleUrls: ['../menu-elements.scss'],
+  styleUrls: ['../menu-elements.scss', 'top-menu.component.scss'],
   animations: [onMenuOpenAnimations]
 })
 export class TopMenuComponent implements OnInit {
