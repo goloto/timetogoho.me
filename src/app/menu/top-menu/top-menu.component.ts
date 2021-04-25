@@ -18,8 +18,5 @@ export class TopMenuComponent implements OnInit {
     this.isMenuOpen = false;
   }
 
-  ngOnInit(): void {
-
-  }
-
+  ngOnInit(): void {}
 }

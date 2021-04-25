@@ -1,12 +1,19 @@
 ul.menu-elements {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
   padding: 4px;
   margin: 0;
 
   background-color: var(--soft-color_1);
   list-style: none;
   overflow: hidden;
+
+  &_settings {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &_links {
+    grid-template-columns: repeat(5, 2fr) 1fr 1fr;
+  }
 
   li {
     display: flex;
