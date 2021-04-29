@@ -139,6 +139,12 @@
     .button-grid {
       &__long-column {
         letter-spacing: 10px;
+
+        &:last-child {
+          .menu-title {
+            margin: 0 0 0 10px;
+          }
+        }
       }
     }
   }
@@ -148,7 +154,14 @@
   .arrow-button {
     .button-grid {
       &__long-column {
+        font-size: 18px;
         letter-spacing: 4px;
+
+        &:last-child {
+          .menu-title {
+            margin: 0 0 0 4px;
+          }
+        }
       }
     }
   }
@@ -159,6 +172,12 @@
     .button-grid {
       &__long-column {
         letter-spacing: 2px;
+
+        &:last-child {
+          .menu-title {
+            margin: 0 0 0 2px;
+          }
+        }
       }
     }
   }
