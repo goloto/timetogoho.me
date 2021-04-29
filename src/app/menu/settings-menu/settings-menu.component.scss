@@ -1,5 +1,26 @@
 .menu-elements {
   &_settings {
     grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 'day-start day-end';
+
+    .day-start {
+      grid-area: day-start;
+    }
+
+    .day-end {
+      grid-area: day-end;
+    }
+  }
+}
+
+@media (max-aspect-ratio: 7 / 8) {
+  .menu-elements {
+    &_settings {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-areas:
+        'day-start'
+        'day-end';
+    }
   }
 }
