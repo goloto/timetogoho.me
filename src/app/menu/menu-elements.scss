@@ -73,6 +73,18 @@
       .link {
         padding: 4px 0;
       }
+
+      .input {
+        font-size: 32px;
+      }
+    }
+  }
+}
+
+@media (max-aspect-ratio: 4 / 7) {
+  .menu-elements {
+    &__element {
+      font-size: 18px;
     }
   }
 }
