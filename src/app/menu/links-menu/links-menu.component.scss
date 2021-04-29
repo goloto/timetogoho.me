@@ -1,5 +1,64 @@
 .menu-elements {
   &_links {
-    grid-template-columns: repeat(5, 2fr) repeat(2, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      'about about cookies cookies report report portfolio portfolio github github love year';
+
+    .about {
+      grid-area: about;
+    }
+
+    .cookies {
+      grid-area: cookies;
+    }
+
+    .report {
+      grid-area: report;
+    }
+
+    .portfolio {
+      grid-area: portfolio;
+    }
+
+    .github {
+      grid-area: github;
+    }
+
+    .love {
+      grid-area: love;
+    }
+
+    .year {
+      grid-area: year;
+    }
+  }
+}
+
+@media (max-aspect-ratio: 8 / 5) {
+  .menu-elements {
+    &_links {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-areas:
+        'about about cookies cookies report report'
+        'portfolio portfolio github github love year';
+    }
+  }
+}
+
+@media (max-aspect-ratio: 3 / 4) {
+  .menu-elements {
+    &_links {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      grid-template-areas:
+        'about about'
+        'cookies cookies'
+        'report report'
+        'portfolio portfolio'
+        'github github'
+        'love year';
+    }
   }
 }
