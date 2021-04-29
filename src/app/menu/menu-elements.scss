@@ -64,3 +64,15 @@
     }
   }
 }
+
+@media (max-aspect-ratio: 3 / 4) {
+  .menu-elements {
+    &__element {
+      font-size: 20px;
+
+      .link {
+        padding: 4px 0;
+      }
+    }
+  }
+}

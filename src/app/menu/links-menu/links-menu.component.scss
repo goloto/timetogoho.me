@@ -50,6 +50,20 @@
 @media (max-aspect-ratio: 3 / 4) {
   .menu-elements {
     &_links {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-areas:
+        'about about cookies cookies'
+        'report report portfolio portfolio'
+        'github github love year';
+    }
+  }
+}
+
+
+@media (max-aspect-ratio: 3 / 7) {
+  .menu-elements {
+    &_links {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(6, 1fr);
       grid-template-areas:
