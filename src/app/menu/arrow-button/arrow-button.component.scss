@@ -133,3 +133,33 @@
     }
   }
 }
+
+@media (max-aspect-ratio: 4 / 3) {
+  .arrow-button {
+    .button-grid {
+      &__long-column {
+        letter-spacing: 10px;
+      }
+    }
+  }
+}
+
+@media (max-aspect-ratio: 4 / 7) {
+  .arrow-button {
+    .button-grid {
+      &__long-column {
+        letter-spacing: 4px;
+      }
+    }
+  }
+}
+
+@media (max-aspect-ratio: 1 / 2) {
+  .arrow-button {
+    .button-grid {
+      &__long-column {
+        letter-spacing: 2px;
+      }
+    }
+  }
+}
