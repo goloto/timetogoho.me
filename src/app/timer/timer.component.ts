@@ -13,9 +13,7 @@ export class TimerComponent implements OnInit {
     public timerService: TimerService,
     public timer: Timer,
     public settings: TimerSettings
-  ) {
-    this.timerService = new TimerService();
-  }
+  ) {}
 
   ngOnInit(): void {
     this
