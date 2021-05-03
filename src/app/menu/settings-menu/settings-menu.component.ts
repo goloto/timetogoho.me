@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { onMenuOpenAnimations } from '../on-menu-open-animations';
+import { TimerSettingsService } from '../../services/timer-settings.service';
+import { TimeFunctions } from '../../other/time-functions';
 
 @Component({
   selector: 'app-settings-menu',
@@ -8,15 +10,31 @@ import { onMenuOpenAnimations } from '../on-menu-open-animations';
   animations: [onMenuOpenAnimations]
 })
 export class SettingsMenuComponent implements OnInit {
-  @Input() isMenuOpen: boolean;
-  public workStarts = new Date();
-  public workEnds = new Date();
-  public dayEnd = `${this.workEnds.getHours()}:${this.workEnds.getMinutes()}`;
-  public dayStart = `${this.workStarts.getHours()}:${this.workStarts.getMinutes()}`;
+  @Input() isMenuOpen = false;
 
-  constructor() {
-    this.isMenuOpen = false;
-  }
+  private dayStartHours = TimeFunctions.convertToBinaryString(this.timerSettingsService.settings.dayEndHours);
+  private dayStartMinutes = TimeFunctions.convertToBinaryString(this.timerSettingsService.settings.dayEndMinutes);
+  private dayEndHours = TimeFunctions.convertToBinaryString(this.timerSettingsService.settings.dayStartHours);
+  private dayEndMinutes = TimeFunctions.convertToBinaryString(this.timerSettingsService.settings.dayStartMinutes);
+
+  public dayEnd = `${this.dayStartHours}:${this.dayStartMinutes}`;
+  public dayStart = `${this.dayEndHours}:${this.dayEndMinutes}`;
+
+  constructor(public timerSettingsService: TimerSettingsService) {}
 
   ngOnInit(): void {}
+
+  onDayStartChange(): void {
+    this.dayStartHours = this.dayStart.split(':')[0];
+    this.dayStartMinutes = this.dayStart.split(':')[1];
+
+    this.timerSettingsService.setDayStart(+this.dayStartHours, +this.dayStartMinutes);
+  }
+
+  onDayEndChange(): void {
+    this.dayEndHours = this.dayEnd.split(':')[0];
+    this.dayEndMinutes = this.dayEnd.split(':')[1];
+
+    this.timerSettingsService.setDayEnd(+this.dayEndHours, +this.dayEndMinutes);
+  }
 }

@@ -1,10 +1,10 @@
 <ul class="menu-elements menu-elements_settings" [@menuState]="isMenuOpen ? 'open' : 'closed'">
   <li class="menu-elements__element day-start">
     <label class="description" for="day-start">work starts at</label>
-    <input class="input day-start" type="time" id="day-start" value="{{dayStart}}">
+    <input class="input day-start" type="time" id="day-start" [(ngModel)]="dayStart" (change)="onDayStartChange()">
   </li>
   <li class="menu-elements__element day-end">
     <label class="description" for="day-end" >work ends at</label>
-    <input class="input day-end" type="time" id="day-end" value="{{dayEnd}}">
+    <input class="input day-end" type="time" id="day-end" [(ngModel)]="dayEnd" (change)="onDayEndChange()">
   </li>
 </ul>

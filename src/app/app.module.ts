@@ -9,6 +9,7 @@ import { MenuComponent } from './menu/menu.component';
 import { SettingsMenuComponent } from './menu/settings-menu/settings-menu.component';
 import { LinksMenuComponent } from './menu/links-menu/links-menu.component';
 import { ArrowButtonComponent } from './menu/arrow-button/arrow-button.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -19,11 +20,12 @@ import { ArrowButtonComponent } from './menu/arrow-button/arrow-button.component
     LinksMenuComponent,
     ArrowButtonComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

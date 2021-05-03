@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { TimeFunctions } from '../other/time-functions';
 import { Observable } from 'rxjs';
 import { Timer } from '../other/timer';
-import { TimerSettings } from '../other/timer-settings';
 import { TimerServiceData } from '../other/timer-service-data';
+import { TimerSettingsService } from './timer-settings.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +11,8 @@ import { TimerServiceData } from '../other/timer-service-data';
 export class TimerService {
   private readonly _data: TimerServiceData;
 
-  constructor() {
-    this._data = new TimerServiceData(new Timer(), new TimerSettings());
+  constructor(public timerSettingsService: TimerSettingsService) {
+    this._data = new TimerServiceData(new Timer(), timerSettingsService.settings);
 
     this.updateServiceData();
   }
@@ -79,7 +79,7 @@ export class TimerService {
       setInterval(() => {
         this.updateServiceData();
         subscriber.next(this._data);
-      });
+      }, 1000);
     });
   }
 }
