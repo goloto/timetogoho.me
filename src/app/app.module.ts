@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +10,6 @@ import { MenuComponent } from './menu/menu.component';
 import { SettingsMenuComponent } from './menu/settings-menu/settings-menu.component';
 import { LinksMenuComponent } from './menu/links-menu/links-menu.component';
 import { ArrowButtonComponent } from './menu/arrow-button/arrow-button.component';
-import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [

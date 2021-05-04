@@ -1,72 +1,61 @@
 import { Injectable } from '@angular/core';
 import { TimeFunctions } from '../other/time-functions';
 import { Observable } from 'rxjs';
-import { Timer } from '../other/timer';
 import { TimerServiceData } from '../other/timer-service-data';
 import { TimerSettingsService } from './timer-settings.service';
+import { Time } from '../other/time';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TimerService {
   private readonly _data: TimerServiceData;
+  private _currentTime = new Time(0, 0, 0);
 
   constructor(public timerSettingsService: TimerSettingsService) {
-    this._data = new TimerServiceData(new Timer(), timerSettingsService.settings);
+    this.updateCurrentTime();
+
+    this._data = new TimerServiceData(
+      new Time(0, 0, 0),
+      timerSettingsService.settings
+    );
 
     this.updateServiceData();
   }
 
-  private isWorkingHour(hour: number): boolean {
-    const hoursUntilDayEnd = TimeFunctions.calcHoursDifferent(
-      hour,
-      this._data.settings.dayEndHours
+  private updateCurrentTime(): void {
+    const currentDate = new Date();
+    this._currentTime = new Time(
+      currentDate.getHours(),
+      currentDate.getMinutes(),
+      currentDate.getSeconds()
     );
-    const workingDayLength = TimeFunctions.calcHoursDifferent(
-      this._data.settings.dayStartHours,
-      this._data.settings.dayEndHours
+  }
+
+  private isWorkingHour(): boolean {
+    const timeUntilDayEnd = TimeFunctions.calcTimeDifferent(
+      this._currentTime,
+      this._data.settings.dayEnd
+    );
+    const workingDayLength = TimeFunctions.calcTimeDifferent(
+      this._data.settings.dayStart,
+      this._data.settings.dayEnd
     );
 
-    return (hoursUntilDayEnd <= workingDayLength);
+    return (timeUntilDayEnd.sum() <= workingDayLength.sum());
   }
 
   private updateServiceData(): void {
-    const secondsInMinute = 60;
-    const incompletePiece = 1;
-    const currentTime = new Date();
-    this._data.settings.isWorkingDay = this.isWorkingHour(currentTime.getHours());
+    this.updateCurrentTime();
 
-    if (this.isWorkingHour(currentTime.getHours())) {
+    this._data.settings.isWorkingDay = this.isWorkingHour();
 
-      this._data.timer.hours =
-        TimeFunctions.calcHoursDifferent(
-          currentTime.getHours(),
-          this._data.settings.dayEndHours
-        ) - incompletePiece;
-
-      this._data.timer.minutes =
-        TimeFunctions.calcMinutesDifferent(
-          currentTime.getMinutes(),
-          this._data.settings.dayEndMinutes
-        ) - incompletePiece;
-
-    } else {
-
-      this._data.timer.hours =
-        TimeFunctions.calcHoursDifferent(
-          currentTime.getHours(),
-          this._data.settings.dayStartHours
-        ) - incompletePiece;
-
-      this._data.timer.minutes =
-        TimeFunctions.calcMinutesDifferent(
-          currentTime.getMinutes(),
-          this._data.settings.dayStartMinutes
-        ) - incompletePiece;
-
-    }
-
-    this._data.timer.seconds = (secondsInMinute - incompletePiece) - currentTime.getSeconds();
+    this._data.time = TimeFunctions.calcTimeDifferent(
+      this._currentTime,
+      this._data.settings.isWorkingDay
+        ? this._data.settings.dayEnd
+        : this._data.settings.dayStart
+    );
   }
 
   get data(): TimerServiceData {

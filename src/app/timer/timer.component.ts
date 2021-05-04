@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TimerService } from '../services/timer.service';
-import { Timer } from '../other/timer';
 import { TimerSettings } from '../other/timer-settings';
+import { Time } from '../other/time';
 
 @Component({
   selector: 'app-timer',
@@ -9,11 +9,13 @@ import { TimerSettings } from '../other/timer-settings';
   styleUrls: ['./timer.component.scss']
 })
 export class TimerComponent implements OnInit {
-  constructor(
-    public timerService: TimerService,
-    public timer: Timer,
-    public settings: TimerSettings
-  ) {}
+  public time: Time;
+  public settings: TimerSettings;
+
+  constructor(public timerService: TimerService) {
+    this.time = new Time(0, 0, 0);
+    this.settings = new TimerSettings();
+  }
 
   ngOnInit(): void {
     this
@@ -21,7 +23,7 @@ export class TimerComponent implements OnInit {
       .observedData
       .subscribe(
       (data) => {
-        this.timer = data.timer;
+        this.time = data.time;
         this.settings = data.settings;
       });
   }

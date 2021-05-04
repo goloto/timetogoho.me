@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { TimerSettings } from '../other/timer-settings';
 import { CookieService } from './cookie.service';
 import { Observable } from 'rxjs';
+import { Time } from '../other/time';
 
 @Injectable({
   providedIn: 'root'
@@ -41,6 +42,8 @@ export class TimerSettingsService {
 
     this._settings.dayStartHours = hour;
     this._settings.dayStartMinutes = minute;
+
+    this._settings.dayStart = new Time(hour, minute, 0);
   }
 
   public setDayEnd(hour: number, minute: number): void {
@@ -48,6 +51,8 @@ export class TimerSettingsService {
 
     this._settings.dayEndHours = hour;
     this._settings.dayEndMinutes = minute;
+
+    this._settings.dayEnd = new Time(hour, minute, 0);
   }
 
   get settings(): TimerSettings {

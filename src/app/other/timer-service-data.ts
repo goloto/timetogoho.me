@@ -1,25 +1,26 @@
 import { Timer } from './timer';
 import { TimerSettings } from './timer-settings';
 import { Injectable } from '@angular/core';
+import { Time } from './time';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TimerServiceData {
-  private _timer: Timer;
+  private _time: Time;
   private _settings: TimerSettings;
 
-  constructor(timer: Timer, settings: TimerSettings) {
-    this._timer = timer;
+  constructor(timer: Time, settings: TimerSettings) {
+    this._time = timer;
     this._settings = settings;
   }
 
-  set timer(value: Timer) {
-    this._timer = value;
+  set time(value: Time) {
+    this._time = value;
   }
 
-  get timer(): Timer {
-    return this._timer;
+  get time(): Time {
+    return this._time;
   }
 
   set settings(value: TimerSettings) {
