@@ -69,7 +69,29 @@ export class Time {
     );
   }
 
-  sum(): number {
+  public sum(): number {
     return this._hours * 3600 + this._minutes * 60 + this._seconds;
+  }
+
+  public reduceHour(): void {
+    this.hours -= 1;
+  }
+
+  public reduceMinute(): void {
+    if (this.minutes === 0) {
+      this.reduceHour();
+      this.minutes = 59;
+    } else {
+      this.minutes -= 1;
+    }
+  }
+
+  public reduceSecond(): void {
+    if (this.seconds === 0) {
+      this.reduceMinute();
+      this.seconds = 59;
+    } else {
+      this.seconds -= 1;
+    }
   }
 }
