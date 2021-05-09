@@ -12,10 +12,10 @@ import { TimeFunctions } from '../../other/time-functions';
 export class SettingsMenuComponent implements OnInit {
   @Input() isMenuOpen = false;
 
-  private dayStartHours = TimeFunctions.convertToBinaryString(this.timerSettingsService.settings.dayEndHours);
-  private dayStartMinutes = TimeFunctions.convertToBinaryString(this.timerSettingsService.settings.dayEndMinutes);
-  private dayEndHours = TimeFunctions.convertToBinaryString(this.timerSettingsService.settings.dayStartHours);
-  private dayEndMinutes = TimeFunctions.convertToBinaryString(this.timerSettingsService.settings.dayStartMinutes);
+  private dayStartHours = TimeFunctions.convertToBinaryString(this.timerSettingsService.settings.dayEnd.hours);
+  private dayStartMinutes = TimeFunctions.convertToBinaryString(this.timerSettingsService.settings.dayEnd.minutes);
+  private dayEndHours = TimeFunctions.convertToBinaryString(this.timerSettingsService.settings.dayStart.hours);
+  private dayEndMinutes = TimeFunctions.convertToBinaryString(this.timerSettingsService.settings.dayStart.minutes);
 
   public dayEnd = `${this.dayStartHours}:${this.dayStartMinutes}`;
   public dayStart = `${this.dayEndHours}:${this.dayEndMinutes}`;
