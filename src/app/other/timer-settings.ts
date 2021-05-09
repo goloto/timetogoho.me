@@ -7,8 +7,8 @@ import { Time } from './time';
 export class TimerSettings {
   private _isWorkingDay = false;
 
-  private _dayStart = new Time(0, 0, 0);
-  private _dayEnd = new Time(0, 0 , 0);
+  private _dayStart = new Time(9, 0, 0);
+  private _dayEnd = new Time(18, 0 , 0);
 
   set dayStart(value: Time) {
     this._dayStart = value;
