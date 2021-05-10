@@ -33,11 +33,11 @@ export class TimerService {
   }
 
   private isWorkingHour(): boolean {
-    const timeUntilDayEnd = TimeFunctions.calcTimeDifferent(
+    const timeUntilDayEnd = TimeFunctions.calcTimeDiff(
       this._currentTime,
       this._data.settings.dayEnd
     );
-    const workingDayLength = TimeFunctions.calcTimeDifferent(
+    const workingDayLength = TimeFunctions.calcTimeDiff(
       this._data.settings.dayStart,
       this._data.settings.dayEnd
     );
@@ -50,7 +50,7 @@ export class TimerService {
 
     this._data.settings.isWorkingDay = this.isWorkingHour();
 
-    this._data.time = TimeFunctions.calcTimeDifferent(
+    this._data.time = TimeFunctions.calcTimeDiff(
       this._currentTime,
       this._data.settings.isWorkingDay
         ? this._data.settings.dayEnd

@@ -7,16 +7,16 @@ export class TimeFunctions {
     return num.toString().length > 1 ? num.toString() : `0${num.toString()}`;
   }
 
-  static calcTimeDifferent(startTime: Time, endTime: Time): Time {
+  static calcTimeDiff(startTime: Time, endTime: Time): Time {
     const resultTime = new Time(0, 0 , 0);
 
-    if (startTime.hours > endTime.hours) {
+    if (startTime.hours >= endTime.hours) {
       resultTime.hours = 24 - startTime.hours + endTime.hours;
     } else {
       resultTime.hours = endTime.hours - startTime.hours;
     }
 
-    if (startTime.minutes > endTime.minutes) {
+    if (startTime.minutes >= endTime.minutes) {
       resultTime.reduceHour();
 
       resultTime.minutes = 60 - startTime.minutes + endTime.minutes;
