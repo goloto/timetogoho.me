@@ -32,9 +32,9 @@ export class TimerSettingsService {
 
   private getDayEnd(): string {
     if (!this.cookieService.get('day-end')) {
-      this.cookieService.set('day-start', '18:00');
+      this.cookieService.set('day-end', '18:00');
 
-      this._settings.dayStart = new Time(18, 0, 0);
+      this._settings.dayEnd = new Time(18, 0, 0);
 
       return '18:00';
     } else {
