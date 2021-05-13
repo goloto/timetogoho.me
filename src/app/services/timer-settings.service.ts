@@ -19,11 +19,27 @@ export class TimerSettingsService {
   }
 
   private getDayStart(): string {
-    return this.cookieService.get('day-start');
+    if (!this.cookieService.get('day-start')) {
+      this.cookieService.set('day-start', '9:00');
+
+      this._settings.dayStart = new Time(9, 0, 0);
+
+      return '9:00';
+    } else {
+      return this.cookieService.get('day-start');
+    }
   }
 
   private getDayEnd(): string {
-    return this.cookieService.get('day-end');
+    if (!this.cookieService.get('day-end')) {
+      this.cookieService.set('day-start', '18:00');
+
+      this._settings.dayStart = new Time(18, 0, 0);
+
+      return '18:00';
+    } else {
+      return this.cookieService.get('day-end');
+    }
   }
 
   public setDayStart(hour: number, minute: number): void {
