@@ -94,4 +94,26 @@ export class Time {
       this.seconds -= 1;
     }
   }
+
+  public addHours(value: number): void {
+    this.hours += value;
+  }
+
+  public addMinutes(value: number): void {
+    if (this.minutes + value >= 60) {
+      this.addHours(Math.floor((this.minutes + value) / 60));
+      this.minutes += (this.minutes + value) % 60;
+    } else {
+      this.minutes += value;
+    }
+  }
+
+  public addSeconds(value: number): void {
+    if (this.seconds + value >= 60) {
+      this.addMinutes(Math.floor((this.seconds + value) / 60));
+      this.seconds += (this.seconds + value) % 60;
+    } else {
+      this.seconds += value;
+    }
+  }
 }
