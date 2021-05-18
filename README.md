@@ -1,7 +1,4 @@
 # Time to go home
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
-
 ## Description
 
 😰 Do you prefer to work from home, but have to work in the office?
@@ -19,6 +16,9 @@ This app shows timer of how much time is left until the end of the working day. 
 ❤️ Try it [here](https://timetogoho.me)! ❤️
 
 ## Technologies
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
+
 
 App was build with **Angular**.
 
