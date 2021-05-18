@@ -4,6 +4,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Description
 
+Do you prefer to work from home, but have to work in the office? Can't wait for the sweet moment when you can go home? Calculate every second up to this point?
+Mee too!
+
+So that's the reason why I built this app!
+
 This app shows timer of how much time is left until the end of the working day. Or (if it's still a working day at this moment) shows how much time is left until the start of the next working day.
 
 Try it [here](https://timetogoho.me)!
