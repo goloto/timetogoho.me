@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 This app shows timer of how much time is left until the end of the working day. Or (if it's still a working day at this moment) shows how much time is left until the start of the next working day.
 
-###Try it [here](https://timetogoho.me)!
+Try it [here](https://timetogoho.me)!
 
 ## Technologies
 
