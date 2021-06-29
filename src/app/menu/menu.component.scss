@@ -17,11 +17,11 @@
   transition: 0.2s;
 
   &_upper {
-    top: 0;
+    top: env(safe-area-inset-top, 0);
   }
 
   &_bottom {
-    bottom: 0;
+    bottom: env(safe-area-inset-bottom, 0);
   }
 }
 
